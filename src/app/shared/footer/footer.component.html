@@ -11,7 +11,7 @@
             </ul>
             <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{anio}} VIRTUAL STORE'S PORTFOLIO </span>All Right Reserved.</p>
         </div>
-        <div class="ae-grid__item item-lg-4 au-xs-ta-center">
+        <div *ngIf="infoPage.infoSite" class="ae-grid__item item-lg-4 au-xs-ta-center">
             <a target="_blank" [href]="infoPage.infoSite.facebook" class="rk-social-btn">
                 <svg>
                   <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
@@ -37,7 +37,7 @@
             <p class="rk-footer__text rk-footer__contact ">
                 <span class="ae-u-bold">Email: </span>
                 <span class="ae-u-bolder">
-                 <a href="mailTo:{{ infoPage.infoSite.email }}" class="rk-dark-color ">{{ infoPage.infoSite.email }}</a>
+                 <a *ngIf="infoPage.infoSite" href="mailTo:{{ infoPage.infoSite.email }}" class="rk-dark-color ">{{ infoPage.infoSite.email }}</a>
                </span>
             </p>
             <p class="rk-footer__text rk-footer__by">Theme by <a href="http://pixeden.com" class="ae-u-bolder">Pixeden.</a></p>

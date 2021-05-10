@@ -3,12 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 import { PortafolioComponent } from './pages/portafolio/portafolio.component';
+import { SearchComponent } from './pages/search/search.component';
 
 const routes: Routes = [
   { path: 'home', component: PortafolioComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'item', component: ItemComponent },
-  // { path: 'item/:id', component: ItemComponent },
+  // { path: 'item', component: ItemComponent },
+  // 44. Enviando parámetros por URL
+  { path: 'item/:id', component: ItemComponent },
+  // 48. Creando la página de búsqueda (Para redireccionamiento)
+  { path: 'search/:termino', component: SearchComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

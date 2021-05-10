@@ -1,12 +1,12 @@
 <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
+    <p>Término buscado: <strong>{{ termino }}</strong></p>
+    <!-- <p><strong>Término buscado: </strong>{{ termino }}</p> -->
     <ng-container *ngIf="prodsSrv.loading; else elseTemplate">
         <app-loading></app-loading>
     </ng-container>
     <ng-template #elseTemplate>
         <div class="ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-            <!-- <a *ngFor="let prod of prodsSrv.prods" routerLink="/item/{{prod.cod}}" class="animated fadeIn rk-item ae-masonry__item"> -->
-            <a *ngFor="let prod of prodsSrv.prods" [routerLink]="['/item/', prod.cod]" class="animated fadeIn rk-item ae-masonry__item">
-                <!-- <img src="assets/img/{{prod.url}}.jpg" alt=""> -->
+            <a *ngFor="let prod of prodsSrv.prodFiltrados" [routerLink]="['/item/', prod.cod]" class="animated fadeIn rk-item ae-masonry__item">
                 <img src="assets/productos/{{prod.url}}.jpg" [alt]="prod.url">
                 <div class="item-meta">
                     <h2>{{prod.titulo}}</h2>

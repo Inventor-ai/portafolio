@@ -14,6 +14,7 @@ export class PortafolioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.prodsSrv.cargarProductos();
   }
 
 }
